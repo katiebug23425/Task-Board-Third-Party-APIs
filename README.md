@@ -1,2 +1,12 @@
 # Task-Board-Third-Party-APIs
-a task board to manage project tasks and when they are due
+
+## Description
+A task board designed to assign specific tasks for a project. Tasks are sorted by date and also color coded to indicate status such as nearing deadline or overdue. Drag and drop fiunctinality as well as the ability to delete tasks is given. 
+
+## Usage
+
+## Screenshot of finished application:
+
+## Link to finished application:
+
+## Credits
