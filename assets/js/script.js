@@ -4,8 +4,16 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 $("#task").click(function() {
     $("form").dialog({
+      height: 400,
+      width: 400,
+      title: "Add Task",
+      buttons: [  {
+        text: "Add Task",
+        click: function() {
+          $( this ).dialog( "close" );
+        },
       appendTo: '#popup',
-      title: "Add Task"
+      }]
     });
   });
 
