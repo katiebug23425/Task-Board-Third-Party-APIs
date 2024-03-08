@@ -2,6 +2,20 @@
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
+$("#task").click(function() {
+    $("form").dialog({
+      appendTo: '#popup',
+      title: "Add Task"
+    });
+  });
+
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  } );
+
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
 
