@@ -4,16 +4,13 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 $("#task").click(function() {
     $("form").dialog({
-      height: 400,
-      width: 400,
+      height: 410,
+      width: 410,
       title: "Add Task",
-      buttons: [  {
-        text: "Add Task",
         click: function() {
           $( this ).dialog( "close" );
         },
       appendTo: '#popup',
-      }]
     });
   });
 
@@ -26,8 +23,11 @@ $("#task").click(function() {
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
-
-}
+    let taskId = nextId;
+    nextId++;
+    localStorage.setItem("nextId", JSON.stringify(nextId));
+    return taskId;
+};
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {

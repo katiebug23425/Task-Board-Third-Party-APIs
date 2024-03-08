@@ -22,3 +22,15 @@ form {
 label {
   color:blue;
 }
+
+#addTasks {
+  background-color: green;
+  color: white;
+  display: block;
+  margin: 0 auto;
+ 
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  color: red; 
+}

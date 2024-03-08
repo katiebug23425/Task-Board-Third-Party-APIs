@@ -10,7 +10,9 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-
+  <style type="text/css">
+    .ui-dialog-titlebar { border:0; background:darkgray; color:black }
+</style> 
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Task Board</title>
 </head>
@@ -31,12 +33,12 @@
 
     </div>
 
-    <form>
+    <form name="taskBar">
       <label for="taskTitle">Task Title:</label>
-      <input type="text"> 
+      <input type="text" id="taskTitle"> 
       <br>
       <br>
-      <label for="date">Due Date:</label>
+      <label for="datepicker">Due Date:</label>
       <input type="text" id="datepicker">
       <br>
       <br>
@@ -44,6 +46,9 @@
       <textarea id="taskDescription" name="taskDescription"
       rows="5" cols="40">
       </textarea>
+      <br>
+      <br>
+      <button id="addTasks">Add Task</button>
     </form>
   
     <div class="row swim-lanes text-center justify-content-between">
