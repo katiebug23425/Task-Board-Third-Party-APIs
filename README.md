@@ -10,3 +10,7 @@ A task board designed to assign specific tasks for a project. Tasks are sorted b
 ## Link to finished application:
 
 ## Credits:
+
+Xpert Learning Asst
+
+
