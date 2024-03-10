@@ -2,6 +2,8 @@
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
+
+
 $("#task").click(function() {
     $("form").dialog({
       height: 410,
@@ -21,6 +23,8 @@ $("#task").click(function() {
     });
   } );
 
+
+
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
     let taskId = nextId;
@@ -31,8 +35,34 @@ function generateTaskId() {
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
-
-}
+  const taskCard = $('<div>')
+  .addClass('task-card draggable my-3')
+  .attr('data-task-id', task.id);
+  const cardHeader = $('<div>').addClass('card-header h4').text(task.title);
+  const cardBody = $('<div>').addClass('card-body');
+  const cardDescription = $('<p>').addClass('card-text').text(task.description);
+  const cardDueDate = $('<p>').addClass('card-text').text(task.dueDate);
+  const cardDeleteBtn = $('<button>')
+  .addClass('danger-btn-delete')
+  .text('Delete')
+  .attr('data-task-id', task.id);
+  cardDeleteBtn.on('click', handleDeleteTask);
+  
+  // //if (task.dueDate && task.status !== 'done'){
+  // const now = dayjs();
+  // const taskCardDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
+  // if (now.isSame(taskDueDate, 'day')) {
+  //   taskCard.addClass('bg-warning text-white');
+  // } else if (now.isAfter(taskDueDate)){
+  //   taskCard.addClass('border-light');
+  // }
+  // }//
+  
+  cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
+  taskCard.append(cardHeader, cardBody);
+  $('#todo-cards').append(taskCard)
+  
+  }
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
@@ -56,5 +86,13 @@ function handleDrop(event, ui) {
 
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
-
+  const addTaskBtn = $("#addTasks")
+  const taskTitleInput = $('#taskTitle')
+  const datepickerInput = $('#datepicker')
+  const taskDescriptionInput = $('#taskDescription')
+  addTaskBtn.click(function(event){
+    event.preventDefault()
+    createTaskCard({title: taskTitleInput.val(), dueDate: datepickerInput.val(), description: taskDescriptionInput.val()})
+    $("form").dialog('close');
+  })
 });
