@@ -1,7 +1,17 @@
+:root {
+  --light: #f6f6f6;
+  --darkblue: #2c3e50;
+  --lightblue: #3498db;
+  --red: #e74c3c;
+  --lightred: #f9eae7;
+  --lightyellow: #fff5d1;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
+
 
 .swim-lanes {
   min-height: 60vh;
@@ -20,6 +30,7 @@ form {
 }
 
 label {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color:blue;
 }
 

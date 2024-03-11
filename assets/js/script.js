@@ -1,7 +1,10 @@
+
+
 // Retrieve tasks and nextId from localStorage
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
+const rightNow = dayjs().format('MMM DD YYYY [at] hh:mm:ss a');
 
 
 $("#task").click(function() {
@@ -15,13 +18,6 @@ $("#task").click(function() {
       appendTo: '#popup',
     });
   });
-
-  $( function() {
-    $( "#datepicker" ).datepicker({
-      changeMonth: true,
-      changeYear: true
-    });
-  } );
 
 
 
@@ -47,16 +43,7 @@ function createTaskCard(task) {
   .text('Delete')
   .attr('data-task-id', task.id);
   cardDeleteBtn.on('click', handleDeleteTask);
-  
-  // //if (task.dueDate && task.status !== 'done'){
-  // const now = dayjs();
-  // const taskCardDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
-  // if (now.isSame(taskDueDate, 'day')) {
-  //   taskCard.addClass('bg-warning text-white');
-  // } else if (now.isAfter(taskDueDate)){
-  //   taskCard.addClass('border-light');
-  // }
-  // }//
+
   
   cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
   taskCard.append(cardHeader, cardBody);
@@ -95,4 +82,16 @@ $(document).ready(function () {
     createTaskCard({title: taskTitleInput.val(), dueDate: datepickerInput.val(), description: taskDescriptionInput.val()})
     $("form").dialog('close');
   })
-});
+
+
+ $( "#datepicker" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+
+    // ? Make lanes droppable
+    $('.lane').droppable({
+      accept: '.draggable',
+      drop: handleDrop,
+    });
+  });
