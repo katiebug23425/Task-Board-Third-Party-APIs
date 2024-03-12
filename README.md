@@ -3,7 +3,6 @@
 ## Description:
 A task board designed to assign specific tasks for a project. Tasks are sorted by date and also color coded to indicate status such as nearing deadline or overdue. Drag and drop functinality as well as the ability to delete tasks is given. 
 
-## Usage:
 
 ## Screenshot of finished application:
 
@@ -11,6 +10,7 @@ A task board designed to assign specific tasks for a project. Tasks are sorted b
 
 ## Link to finished application:
 
+https://katiebug23425.github.io/Task-Board-Third-Party-APIs/
 
 ## Credits:
 
