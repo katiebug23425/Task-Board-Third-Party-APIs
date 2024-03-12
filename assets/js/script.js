@@ -47,7 +47,6 @@ function createTaskCard(task) {
   cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
   taskCard.append(cardHeader, cardBody);
   $('#todo-cards').append(taskCard)
-  
   }
 
 // Todo: create a function to render the task list and make cards draggable

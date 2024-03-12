@@ -7,7 +7,10 @@ A task board designed to assign specific tasks for a project. Tasks are sorted b
 
 ## Screenshot of finished application:
 
+![screenshot for links to more information](./assets/Images/task%20board%20screenshot.png)
+
 ## Link to finished application:
+
 
 ## Credits:
 
