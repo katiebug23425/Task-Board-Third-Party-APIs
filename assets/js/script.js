@@ -4,7 +4,6 @@
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
-const rightNow = dayjs().format('MMM DD YYYY [at] hh:mm:ss a');
 
 
 $("#task").click(function() {
